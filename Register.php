@@ -29,19 +29,19 @@
         
         $r = mysqli_query($conn,$sql);
 
-                if ($r==true) {
-                    echo "<script>alert('Your Registration is seccussful.');</script>";
-                }
-                else {
-                    echo "Error";
-                }
-    }
+        if ($r==true) {
+            echo "<script>alert('Your account is sucessfully created.');</script>";
+        }
+        else {
+            echo "Error";
+         }
+      }
 
     ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-      <form class="form container mt-0 shadow p-4" action="Register.php" method="POST">
+      <form class="form container mt-0 shadow p-5 bg-info" action="Register.php" method="POST">
         <center><h3>Registration Form</h3></center>
         <div class="row g-3">
           <div class="col mb-3 mt-5">
@@ -114,7 +114,9 @@
           <label fo class="form-label">Password</label>
           <input type="password" class="form-control" name="pass">
         </div>
-        <button type="submit" name="submit" class="btn btn-info">Register Now</button>
+        
+        <button type="submit" name="submit" class="btn btn-primary">Register Now</button>
+        <br><br><span>If you are already registred then<a href="Login.php">login.</a></span>
       </form>
     
   </body>
