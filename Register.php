@@ -8,9 +8,11 @@
   </head>
   <body>
   <?php
-
+    // Check user click on Register now button if click then go into the body of if statement.
     if (isset($_POST['submit'])) {
+      // Connect the database and table in database.
         include 'dbcon.php';
+        // Set variables for input feilds.
         $dob = $_POST['dob'];
         $mat = $_POST['mat'];
         $mar = $_POST['mar'];
@@ -23,23 +25,22 @@
         $email = $_POST['email'];
         $password = $_POST['pass'];
         $gander = $_POST['gander'];
-
+        // Insert the data into the database using insert query.
         $sql = "INSERT INTO `registration`(`First Name`, `Last Name`, `Father Name`, `Mother Name`, `Date Of Birth`, `Gander`, `10th Roll Number`, `Mark`, `High Qualification`, `Marks`, `Email`, `Password`) 
                 VALUES ('$fname','$lname','$pname','$mname','$dob','$gander','$mat','$mar','$qual','$marks','$email','$password')";
-        
+        // Execute the query.
         $r = mysqli_query($conn,$sql);
-
+        // Check query execution is scuess or not if scuess the execute if body otherwise execute else body.
         if ($r==true) {
+            // Shhow alert to scuessfull regsitration. 
             echo "<script>alert('Your account is sucessfully created.');</script>";
         }
         else {
+            // Else show Error into the body in regsitration page.
             echo "Error";
          }
       }
-
     ?>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
       <form class="form container mt-0 shadow p-5 bg-info" action="Register.php" method="POST">
         <center><h3>Registration Form</h3></center>
